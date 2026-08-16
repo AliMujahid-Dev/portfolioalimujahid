@@ -208,9 +208,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const projectsData = {
     1: {
       badge: 'Chrome Extension (MV3)',
-      title: 'AdGuard Pro - Chrome Extension',
+      title: 'Brevix ads blocker - Chrome Extension',
       image: './images/chrome_ext.jpg',
-      desc: 'AdGuard Pro is a production Manifest V3 Chrome extension developed with modern JavaScript ES6+ and Chrome WebRequest APIs. It blocks intrusive scripts, tracks real-time blocked ad analytics, and lets users inject custom filtering rules.',
+      desc: 'Brevix ads blocker is a production Manifest V3 Chrome extension developed with modern JavaScript ES6+ and Chrome WebRequest APIs. It blocks intrusive scripts, tracks real-time blocked ad analytics, and lets users inject custom filtering rules.',
       live: 'https://chrome.google.com',
       github: 'https://github.com'
     },
