@@ -332,13 +332,22 @@ document.addEventListener('DOMContentLoaded', () => {
   if (contactForm) {
     contactForm.addEventListener('submit', (e) => {
       e.preventDefault();
-      if (successToast) {
-        successToast.style.display = 'flex';
-        contactForm.reset();
-        setTimeout(() => {
-          successToast.style.display = 'none';
-        }, 5000);
-      }
+      const formData = new FormData(contactForm);
+      fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams(formData).toString()
+      })
+      .then(() => {
+        if (successToast) {
+          successToast.style.display = 'flex';
+          contactForm.reset();
+          setTimeout(() => {
+            successToast.style.display = 'none';
+          }, 5000);
+        }
+      })
+      .catch((error) => console.error(error));
     });
   }
 });

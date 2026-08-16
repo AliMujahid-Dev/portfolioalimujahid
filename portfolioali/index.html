@@ -509,26 +509,27 @@
               <span>Thank you! Your message has been sent successfully.</span>
             </div>
 
-            <form id="portfolio-contact-form" style="display: flex; flex-direction: column; gap: 22px;">
+            <form id="portfolio-contact-form" name="contact" method="POST" data-netlify="true" style="display: flex; flex-direction: column; gap: 22px;">
+              <input type="hidden" name="form-name" value="contact" />
               <div class="form-row-2">
                 <div class="field-group">
                   <label class="field-label">NAME</label>
-                  <input type="text" class="field-input" placeholder="Your Name" required />
+                  <input type="text" name="name" class="field-input" placeholder="Your Name" required />
                 </div>
                 <div class="field-group">
                   <label class="field-label">EMAIL</label>
-                  <input type="email" class="field-input" placeholder="Your Email Address" required />
+                  <input type="email" name="email" class="field-input" placeholder="Your Email Address" required />
                 </div>
               </div>
 
               <div class="field-group">
                 <label class="field-label">PROJECT / SUBJECT</label>
-                <input type="text" class="field-input" placeholder="e.g. Website Development, Chrome Extension, Social Media Growth..." required />
+                <input type="text" name="project" class="field-input" placeholder="e.g. Website Development, Chrome Extension, Social Media Growth..." required />
               </div>
 
               <div class="field-group">
                 <label class="field-label">MESSAGE</label>
-                <textarea class="field-textarea" rows="4" placeholder="Your message details..." required></textarea>
+                <textarea name="message" class="field-textarea" rows="4" placeholder="Your message details..." required></textarea>
               </div>
 
               <button type="submit" class="submit-btn-orange">
