@@ -1200,6 +1200,11 @@ body {
   .form-row-2 {
     grid-template-columns: 1fr;
   }
+
+  .contact-box-sawad {
+    padding: 24px;
+    gap: 30px;
+  }
 }
 
 @media (max-width: 480px) {
@@ -1238,5 +1243,9 @@ body {
   }
   .nav-icon-btn {
     padding: 6px;
+  }
+  .contact-box-sawad {
+    padding: 16px;
+    gap: 20px;
   }
 }
