@@ -30,6 +30,9 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100%;
 }
 
 body {
@@ -37,6 +40,8 @@ body {
   color: var(--text-white);
   font-family: var(--font-body);
   overflow-x: hidden;
+  width: 100%;
+  max-width: 100%;
   min-height: 100vh;
 }
 
@@ -47,8 +52,8 @@ body {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   pointer-events: none;
   z-index: 1;
   opacity: 0.95;
@@ -92,7 +97,7 @@ body {
 .floating-nav {
   position: fixed;
   top: 50%;
-  right: 24px;
+  right: 12px;
   transform: translateY(-50%);
   background: rgba(26, 24, 23, 0.92);
   backdrop-filter: blur(16px);
@@ -1070,18 +1075,7 @@ body {
 }
 
 @media (max-width: 1024px) {
-  .hero-wrapper {
-    flex-direction: column;
-    align-items: center;
-  }
-  .profile-card-sawad {
-    width: 100%;
-    max-width: 380px;
-  }
-  .title-line-1, .title-line-2 {
-    font-size: 3.6rem;
-  }
-  .funny-tools-grid, .social-mgmt-card, .services-grid-3, .contact-box-sawad, .hero-cards-row, .projects-grid-sawad {
+  .funny-tools-grid, .social-mgmt-card, .services-grid-3, .contact-box-sawad, .projects-grid-sawad {
     grid-template-columns: 1fr;
   }
   .contact-info-panel {
@@ -1098,15 +1092,111 @@ body {
 }
 
 @media (max-width: 768px) {
-  .stats-row-sawad {
-    gap: 24px;
+  .hero-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 16px 80px 16px;
   }
-  .stat-num-sawad {
-    font-size: 2.6rem;
+
+  .profile-card-sawad {
+    display: block;
+    width: 100%;
+    max-width: 380px;
+    background: var(--card-white);
+    border: 1px solid var(--border-white-card);
+    border-radius: 32px;
+    padding: 24px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+    margin: 0 auto 30px auto;
+    color: var(--text-dark);
+    text-align: center;
   }
+
+  .profile-img-box {
+    position: relative;
+    border-radius: 20px;
+    height: 280px;
+    overflow: hidden;
+    margin-bottom: 20px;
+  }
+
+  .profile-avatar-sawad {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* Restore text colors inside white card for mobile */
+  .profile-name-sawad {
+    color: var(--text-dark) !important;
+  }
+  .profile-bio-sawad {
+    color: var(--text-dark-muted) !important;
+  }
+
+  .hero-content-sawad {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .big-title-sawad {
+    text-align: center;
+    margin-top: 10px;
+  }
+
   .title-line-1, .title-line-2 {
     font-size: 2.8rem;
+    line-height: 1.1;
   }
+
+  .hero-text-sawad {
+    text-align: center;
+    margin: 16px auto 0 auto;
+    max-width: 500px;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.7);
+  }
+
+  .stats-row-sawad {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 16px;
+    margin-top: 24px;
+    width: 100%;
+    padding: 16px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    backdrop-filter: blur(10px);
+  }
+
+  .stat-item-sawad {
+    text-align: center;
+  }
+
+  .stat-num-sawad {
+    font-size: 2rem;
+  }
+
+  .stat-text-sawad {
+    font-size: 0.7rem;
+    margin-top: 4px;
+  }
+
+  .hero-cards-row {
+    grid-column: unset;
+    grid-row: unset;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin-top: 24px;
+    width: 100%;
+  }
+
   .form-row-2 {
     grid-template-columns: 1fr;
   }
@@ -1114,24 +1204,32 @@ body {
 
 @media (max-width: 480px) {
   .main-wrapper {
-    padding: 30px 16px 80px 16px;
-    gap: 50px;
+    padding: 20px 12px 80px 12px;
+    gap: 40px;
   }
   .title-line-1, .title-line-2 {
     font-size: 2.2rem;
   }
-  .stats-row-sawad {
-    flex-direction: column;
-    gap: 16px;
-  }
-  .stat-num-sawad {
-    font-size: 2.4rem;
+  .hero-text-sawad {
+    font-size: 0.85rem;
   }
   .profile-card-sawad {
     padding: 16px;
+    margin-bottom: 20px;
   }
   .profile-img-box {
     height: 220px;
+    margin-bottom: 16px;
+  }
+  .stats-row-sawad {
+    padding: 12px;
+    gap: 8px;
+  }
+  .stat-num-sawad {
+    font-size: 1.6rem;
+  }
+  .stat-text-sawad {
+    font-size: 0.6rem;
   }
   .floating-nav {
     bottom: 12px;
