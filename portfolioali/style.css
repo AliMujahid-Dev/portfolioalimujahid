@@ -1092,9 +1092,9 @@ body {
 }
 
 @media (max-width: 768px) {
-  /* SECTION 1: FULL 2-COLUMN SIDE-BY-SIDE HERO LAYOUT ON MOBILE */
+  /* SECTION 1: FULL 2-COLUMN SIDE-BY-SIDE HERO LAYOUT STRETCHED TO FULL SCREEN HEIGHT */
   .main-wrapper {
-    padding: 10px 4px 60px 4px;
+    padding: 6px 2px 60px 2px;
   }
 
   .hero-wrapper {
@@ -1102,7 +1102,9 @@ body {
     flex-direction: row;
     gap: 10px;
     align-items: stretch;
-    padding: 10px 2px;
+    min-height: calc(100vh - 20px);
+    min-height: calc(100dvh - 20px);
+    padding: 6px 2px;
     width: 100%;
     box-sizing: border-box;
   }
@@ -1123,12 +1125,14 @@ body {
     margin: 0;
     color: var(--text-dark);
     text-align: center;
+    height: 100%;
+    box-sizing: border-box;
   }
 
   .profile-img-box {
     position: relative;
     border-radius: 14px;
-    height: 145px;
+    height: 165px;
     width: 100%;
     overflow: hidden;
     margin-bottom: 6px;
@@ -1145,7 +1149,7 @@ body {
   }
 
   .profile-name-sawad {
-    font-size: 0.92rem;
+    font-size: 0.95rem;
     font-weight: 900;
     color: #111111 !important;
     margin-top: 2px;
@@ -1153,18 +1157,18 @@ body {
   }
 
   .flame-icon-box {
-    width: 22px;
-    height: 22px;
+    width: 24px;
+    height: 24px;
     margin-bottom: 4px;
   }
 
   .flame-icon-box svg {
-    width: 12px;
-    height: 12px;
+    width: 13px;
+    height: 13px;
   }
 
   .profile-bio-sawad {
-    font-size: 0.58rem;
+    font-size: 0.6rem;
     color: #666666 !important;
     line-height: 1.3;
     margin-bottom: 6px;
@@ -1200,6 +1204,7 @@ body {
     justify-content: space-between;
     gap: 8px;
     width: 58%;
+    height: 100%;
   }
 
   .big-title-sawad {
@@ -1209,12 +1214,12 @@ body {
   }
 
   .title-line-1 {
-    font-size: 1.55rem;
+    font-size: 1.6rem;
     line-height: 1;
   }
 
   .title-line-2 {
-    font-size: 1.55rem;
+    font-size: 1.6rem;
     line-height: 1;
     margin-top: -2px;
   }
@@ -1223,7 +1228,7 @@ body {
     text-align: left;
     margin: 0;
     max-width: 100%;
-    font-size: 0.68rem;
+    font-size: 0.7rem;
     line-height: 1.35;
     color: rgba(255, 255, 255, 0.7);
   }
@@ -1235,10 +1240,10 @@ body {
     gap: 4px;
     margin-top: 2px;
     width: 100%;
-    padding: 6px 8px;
+    padding: 8px;
     background: rgba(255, 255, 255, 0.04);
     border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 12px;
+    border-radius: 14px;
   }
 
   .stat-item-sawad {
@@ -1246,7 +1251,7 @@ body {
   }
 
   .stat-num-sawad {
-    font-size: 1.35rem;
+    font-size: 1.4rem;
     font-weight: 900;
     line-height: 1;
   }
@@ -1261,14 +1266,14 @@ body {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 6px;
-    margin-top: 2px;
+    margin-top: auto;
     width: 100%;
   }
 
   .hero-banner-card {
     border-radius: 14px;
-    padding: 10px 8px;
-    height: 110px;
+    padding: 12px 8px;
+    height: 120px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -1280,7 +1285,7 @@ body {
   }
 
   .banner-title-text {
-    font-size: 0.58rem;
+    font-size: 0.6rem;
     font-weight: 900;
     line-height: 1.25;
   }
@@ -1324,42 +1329,46 @@ body {
 
 @media (max-width: 480px) {
   .main-wrapper {
-    padding: 8px 2px 80px 2px;
+    padding: 4px 2px 80px 2px;
     gap: 32px;
   }
+  .hero-wrapper {
+    min-height: calc(100vh - 12px);
+    min-height: calc(100dvh - 12px);
+  }
   .title-line-1, .title-line-2 {
-    font-size: 1.35rem;
+    font-size: 1.4rem;
   }
   .hero-text-sawad {
-    font-size: 0.62rem;
+    font-size: 0.64rem;
   }
   .profile-card-sawad {
-    padding: 8px 6px;
+    padding: 10px 6px;
     border-radius: 14px;
   }
   .profile-img-box {
-    height: 130px;
+    height: 150px;
     border-radius: 10px;
     margin-bottom: 4px;
   }
   .profile-name-sawad {
-    font-size: 0.85rem;
+    font-size: 0.88rem;
   }
   .profile-bio-sawad {
-    font-size: 0.54rem;
+    font-size: 0.56rem;
   }
   .stat-num-sawad {
-    font-size: 1.25rem;
+    font-size: 1.3rem;
   }
   .stat-text-sawad {
-    font-size: 0.44rem;
+    font-size: 0.46rem;
   }
   .hero-banner-card {
-    height: 100px;
-    padding: 8px 6px;
+    height: 110px;
+    padding: 10px 6px;
   }
   .banner-title-text {
-    font-size: 0.54rem;
+    font-size: 0.56rem;
   }
   .section-title-sawad {
     font-size: 1.25rem;
