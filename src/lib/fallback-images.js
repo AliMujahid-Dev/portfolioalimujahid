@@ -116,29 +116,29 @@ export function getCategoryFallbackImage(category = '', titleOrTopic = '') {
   const text = `${category} ${titleOrTopic}`.toLowerCase();
   let pool = CATEGORY_IMAGE_POOLS.Default;
 
-  // Keyword-based pool selection
-  if (text.match(/art|artist|museum|gallery|portrait|painting|sculpture|theatre|theater|music|concert|movie|film|culture|exhibit|heritage/)) {
-    pool = CATEGORY_IMAGE_POOLS.Arts;
-  } else if (text.match(/food|dining|restaurant|recipe|chef|culinary|cooking|meal|wine|coffee|lassi|kulcha|cafe|bakery/)) {
-    pool = CATEGORY_IMAGE_POOLS.Food;
-  } else if (text.match(/ai|artificial intelligence|robot|chip|nvidia|openai|deepseek|software|apple|google|tech|smartphone|phone|cyber|gadget|laptop|quantum/)) {
+  // Prioritize High-Tech and Business keywords before Arts, using strict word boundaries
+  if (text.match(/\b(ai|artificial intelligence|agent|agentic|robot|robotics|chip|chips|nvidia|openai|deepseek|software|algorithm|cyber|cloud|computing|server|hardware|developer|app|platform|saas|gadget|laptop|quantum)\b/i)) {
     pool = CATEGORY_IMAGE_POOLS.Tech;
-  } else if (text.match(/health|medical|medicine|hospital|doctor|virus|disease|cancer|vaccine|fitness|wellness|mental|diet|surgery|pharma/)) {
-    pool = CATEGORY_IMAGE_POOLS.Health;
-  } else if (text.match(/science|scientific|climate|nature|biology|physics|research|environment|ocean|planet|wildlife|energy|green|ecology/)) {
-    pool = CATEGORY_IMAGE_POOLS.Science;
-  } else if (text.match(/cricket|football|soccer|fifa|tennis|sport|match|stadium|f1|olympics|nba|nfl|championship|tournament|race|golf/)) {
-    pool = CATEGORY_IMAGE_POOLS.Sports;
-  } else if (text.match(/business|company|startup|ceo|industry|trade|economy|bank|finance|earnings|stock|market|sensex|nifty|inflation|fed|corporate/)) {
+  } else if (text.match(/\b(business|company|startup|ceo|industry|trade|economy|bank|banking|finance|earnings|stock|stocks|market|markets|invest|investor|investing|venture|deal|valuation|revenue|corporate|partnership)\b/i)) {
     pool = CATEGORY_IMAGE_POOLS.Business;
-  } else if (text.match(/politic|election|vote|minister|senate|court|law|war|military|diplomacy|president|government|parliament|congress|treaty/)) {
+  } else if (text.match(/\b(science|scientific|climate|nature|biology|physics|research|environment|ocean|planet|wildlife|energy|green|battery|batteries|cooling|ecology)\b/i)) {
+    pool = CATEGORY_IMAGE_POOLS.Science;
+  } else if (text.match(/\b(health|medical|medicine|hospital|doctor|virus|disease|cancer|vaccine|fitness|wellness|mental|diet|surgery|pharma|microbiome|gut)\b/i)) {
+    pool = CATEGORY_IMAGE_POOLS.Health;
+  } else if (text.match(/\b(cricket|football|soccer|fifa|tennis|padel|sport|sports|match|stadium|f1|olympics|nba|nfl|championship|tournament|race|golf)\b/i)) {
+    pool = CATEGORY_IMAGE_POOLS.Sports;
+  } else if (text.match(/\b(politic|politics|political|election|vote|minister|senate|court|law|war|military|diplomacy|president|government|parliament|congress|treaty)\b/i)) {
     pool = CATEGORY_IMAGE_POOLS.Politics;
-  } else if (text.match(/travel|flight|airline|tourism|vacation|hotel|resort|destination|journey|island|airport/)) {
+  } else if (text.match(/\b(food|dining|restaurant|recipe|chef|culinary|cooking|meal|wine|coffee|bakery)\b/i)) {
+    pool = CATEGORY_IMAGE_POOLS.Food;
+  } else if (text.match(/\b(travel|flight|airline|tourism|vacation|hotel|resort|destination|journey|island|airport)\b/i)) {
     pool = CATEGORY_IMAGE_POOLS.Travel;
-  } else if (text.match(/style|fashion|clothing|model|apparel|luxury|design|trend|beauty|cosmetics/)) {
+  } else if (text.match(/\b(style|fashion|clothing|model|apparel|luxury|design|beauty|cosmetics)\b/i)) {
     pool = CATEGORY_IMAGE_POOLS.Style;
-  } else if (text.match(/opinion|editorial|analysis|perspective|columnist|essay/)) {
+  } else if (text.match(/\b(opinion|editorial|analysis|perspective|columnist|essay)\b/i)) {
     pool = CATEGORY_IMAGE_POOLS.Opinion;
+  } else if (text.match(/\b(art|arts|artist|artists|museum|gallery|portrait|painting|sculpture|theatre|theater|music|concert|movie|film|culture|exhibit|heritage)\b/i)) {
+    pool = CATEGORY_IMAGE_POOLS.Arts;
   } else {
     // Check direct category name
     const normalizedCat = (category || '').trim();

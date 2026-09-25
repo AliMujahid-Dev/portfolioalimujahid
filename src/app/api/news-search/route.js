@@ -40,7 +40,7 @@ export async function GET(request) {
       const googleItems = (googleRssRes.status === 'fulfilled' && Array.isArray(googleRssRes.value)) ? googleRssRes.value : [];
       const bingItems = (bingRssRes.status === 'fulfilled' && Array.isArray(bingRssRes.value)) ? bingRssRes.value : [];
 
-      const batch = [...gnewsItems, ...googleItems, ...bingItems];
+      const batch = [...bingItems, ...gnewsItems, ...googleItems];
 
       for (const item of batch) {
         if (!item || !item.title) continue;
@@ -237,15 +237,26 @@ async function fetchBingNewsRSS(query) {
         let rawTitle = cleanText(titleMatch[1].replace(/<!\[CDATA\[(.*?)\]\]>/g, '$1').trim());
         const rawDesc = descMatch ? cleanText(descMatch[1].replace(/<!\[CDATA\[(.*?)\]\]>/g, '$1')) : '';
 
+        // Extract real authentic publisher photo from Bing News XML
+        const imgMatch = itemContent.match(/<News:Image>([\s\S]*?)<\/News:Image>/i) ||
+                         itemContent.match(/<media:content[^>]+url=["']([^"']+)["']/i) ||
+                         itemContent.match(/<enclosure[^>]+url=["']([^"']+)["']/i) ||
+                         itemContent.match(/<img[^>]+src=["']([^"']+)["']/i);
+        let realImg = imgMatch ? imgMatch[1].replace(/&amp;/g, '&').trim() : null;
+
+        // Extract authentic source name
+        const sourceMatch = itemContent.match(/<News:Source>([\s\S]*?)<\/News:Source>/i);
+        const sourceName = sourceMatch ? cleanText(sourceMatch[1]) : "Global News Wire";
+
         if (rawTitle) {
           items.push({
             title: rawTitle,
             description: rawDesc || `Global analysis on ${query}. Live insights and industry developments.`,
             content: rawDesc || `Full news reporting regarding ${query}.`,
             url: linkMatch ? linkMatch[1].trim() : "https://www.readers24.com",
-            image: getCategoryFallbackImage('', `${rawTitle} ${query}`),
+            image: realImg || getCategoryFallbackImage('', `${rawTitle} ${query}`),
             publishedAt: dateMatch ? new Date(dateMatch[1].trim()).toISOString() : new Date().toISOString(),
-            source: { name: "Bing News Wire", url: "https://www.bing.com/news" }
+            source: { name: sourceName, url: linkMatch ? linkMatch[1].trim() : "https://www.bing.com/news" }
           });
         }
       }
