@@ -1,0 +1,149 @@
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+  animation: fadeIn 0.2s ease-out;
+}
+
+.modalContent {
+  background: white;
+  padding: 32px;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 450px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  position: relative;
+  animation: slideUp 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.closeBtn {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: none;
+  border: none;
+  color: #94a3b8;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 50%;
+  transition: all 0.2s;
+}
+
+.closeBtn:hover {
+  background-color: #f1f5f9;
+  color: #0f172a;
+}
+
+.modalContent h2 {
+  font-size: 1.5rem;
+  margin-bottom: 8px;
+  color: #0f172a;
+}
+
+.modalContent p {
+  color: #64748b;
+  margin-bottom: 24px;
+  font-size: 0.95rem;
+}
+
+.shareOptions {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.shareOption {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 12px;
+  border-radius: 12px;
+  transition: all 0.2s;
+}
+
+.shareOption:hover {
+  background-color: #f8fafc;
+}
+
+.iconWrapper {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.shareOption span {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #475569;
+}
+
+.copyLabel {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #0f172a;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.copyGroup {
+  display: flex;
+  gap: 8px;
+}
+
+.copyInput {
+  flex: 1;
+  padding: 10px 16px;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  background-color: #f8fafc;
+  font-size: 0.85rem;
+  color: #64748b;
+  outline: none;
+}
+
+.copyBtn {
+  padding: 10px 20px;
+  background-color: #0f172a;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.copyBtn:hover {
+  background-color: #1e293b;
+}
+
+.copied {
+  background-color: #10b981 !important;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}

@@ -1,0 +1,159 @@
+.podcastsPage {
+  padding: 60px 0 100px;
+  background-color: #ffffff;
+  min-height: 100vh;
+}
+
+.backLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #64748b;
+  text-decoration: none;
+  font-size: 0.9rem;
+  margin-bottom: 48px;
+}
+
+.header {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto 64px;
+}
+
+.headerIcon {
+  color: #3b82f6;
+  margin-bottom: 24px;
+  background: #eff6ff;
+  padding: 12px;
+  border-radius: 50%;
+}
+
+.title {
+  font-size: 3rem;
+  font-weight: 800;
+  color: #0f172a;
+  letter-spacing: -0.02em;
+  margin-bottom: 16px;
+}
+
+.description {
+  font-size: 1.2rem;
+  color: #64748b;
+  line-height: 1.5;
+}
+
+.podcastGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 40px;
+}
+
+.podcastCard {
+  background-color: #f8fafc;
+  border-radius: 16px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid #e2e8f0;
+}
+
+.podcastCard:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05);
+}
+
+.imageWrapper {
+  position: relative;
+  aspect-ratio: 16 / 9;
+}
+
+.podcastImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.playBtn {
+  position: absolute;
+  bottom: 16px;
+  right: 16px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background-color: #3b82f6;
+  color: white;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+}
+
+.playBtn:hover {
+  transform: scale(1.1);
+}
+
+.podcastContent {
+  padding: 24px;
+}
+
+.podcastTitle {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 12px;
+}
+
+.podcastMeta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+  color: #64748b;
+  margin-bottom: 16px;
+}
+
+.host {
+  font-weight: 600;
+  color: #334155;
+}
+
+.duration {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.podcastDesc {
+  color: #64748b;
+  line-height: 1.6;
+  margin-bottom: 24px;
+  font-size: 0.95rem;
+}
+
+.listenLink {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background: none;
+  border: none;
+  color: #3b82f6;
+  font-weight: 700;
+  font-size: 0.9rem;
+  cursor: pointer;
+  padding: 0;
+}
+
+.listenLink:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 640px) {
+  .podcastGrid {
+    grid-template-columns: 1fr;
+  }
+  .title {
+    font-size: 2.25rem;
+  }
+}

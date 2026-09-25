@@ -1,0 +1,143 @@
+.infoPage {
+  background-color: var(--nav-bg);
+  min-height: 100vh;
+  padding: 40px 0 80px;
+}
+
+.backLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 0.95rem;
+  margin-bottom: 40px;
+  transition: color 0.2s;
+}
+
+.backLink:hover {
+  color: var(--accent-color);
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.iconWrapper {
+  width: 80px;
+  height: 80px;
+  background-color: var(--bg-color);
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent-color);
+  margin-bottom: 24px;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+}
+
+.title {
+  font-family: var(--font-serif);
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.contentCard {
+  background-color: var(--bg-color);
+  border-radius: 24px;
+  padding: 60px;
+  box-shadow: 0 20px 50px -10px rgba(0, 0, 0, 0.4);
+  max-width: 900px;
+  margin: 0 auto;
+  border: 1px solid var(--border-color);
+}
+
+.richText {
+  color: var(--text-secondary);
+  line-height: 1.8;
+  font-size: 1.15rem;
+}
+
+.richText h2 {
+  font-family: var(--font-serif);
+  color: var(--text-primary);
+  font-size: 2rem;
+  margin: 48px 0 24px;
+}
+
+.richText p {
+  margin-bottom: 24px;
+}
+
+.richText ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 32px;
+}
+
+.richText li {
+  padding: 16px;
+  background-color: var(--nav-bg);
+  border-radius: 12px;
+  margin-bottom: 12px;
+  border: 1px solid var(--border-color);
+}
+
+.richText strong {
+  color: var(--text-primary);
+}
+
+.richText a {
+  color: var(--accent-color);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.sitemapGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 40px;
+  margin-top: 40px;
+}
+
+.sitemapGrid h3 {
+  color: var(--text-primary);
+  margin-bottom: 20px;
+}
+
+.sitemapGrid ul {
+  list-style: none;
+}
+
+.sitemapGrid li {
+  padding: 0;
+  background: none;
+  border: none;
+  margin-bottom: 8px;
+}
+
+.footer {
+  text-align: center;
+  margin-top: 60px;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 2.5rem;
+  }
+  
+  .contentCard {
+    padding: 30px;
+  }
+  
+  .richText h2 {
+    font-size: 1.5rem;
+  }
+}

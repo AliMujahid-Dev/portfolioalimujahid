@@ -1,0 +1,220 @@
+.loginContainer {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #0f172a;
+  background-image: 
+    linear-gradient(rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.9)),
+    url('https://images.unsplash.com/photo-1504711434969-e33886168f5c?q=80&w=2070&auto=format&fit=crop');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  padding: var(--spacing-xl);
+}
+
+.backHome {
+  position: absolute;
+  top: var(--spacing-xl);
+  left: var(--spacing-xl);
+  color: rgba(255, 255, 255, 0.6);
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  transition: color 0.2s;
+}
+
+.backHome:hover {
+  color: white;
+}
+
+.loginCard {
+  width: 100%;
+  max-width: 440px;
+  background-color: white;
+  border-radius: 4px; /* Sharp editorial corners */
+  padding: var(--spacing-3xl);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+
+.cardHeader {
+  text-align: center;
+  margin-bottom: var(--spacing-2xl);
+}
+
+.logoWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-md);
+}
+
+.logoIcon {
+  color: var(--accent-color);
+}
+
+.brandName {
+  font-family: var(--font-serif);
+  font-size: 2rem;
+  font-weight: 800;
+  color: #1e293b;
+  letter-spacing: -0.02em;
+}
+
+.tagline {
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  color: #64748b;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.errorMessage {
+  background-color: #fef2f2;
+  color: #b91c1c;
+  padding: 12px;
+  border-radius: 4px;
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin-bottom: var(--spacing-lg);
+  border: 1px solid #fee2e2;
+  text-align: center;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xl);
+}
+
+.inputField {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.labelRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.inputField label {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: #475569;
+  text-transform: uppercase;
+  letter-spacing: 0.025em;
+}
+
+.forgotBtn {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--accent-color);
+}
+
+.inputContainer {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.inputContainer svg {
+  position: absolute;
+  left: 12px;
+  color: #94a3b8;
+}
+
+.inputContainer input {
+  width: 100%;
+  padding: 14px 12px 14px 42px;
+  border: 1px solid #e2e8f0;
+  border-radius: 4px;
+  font-family: var(--font-sans);
+  font-size: 0.9375rem;
+  transition: all 0.2s;
+  background-color: #f8fafc;
+}
+
+.inputContainer input:focus {
+  outline: none;
+  border-color: #1e293b;
+  background-color: white;
+  box-shadow: 0 0 0 1px #1e293b;
+}
+
+.submitBtn {
+  background-color: #1e293b;
+  color: white;
+  border: none;
+  padding: 16px;
+  border-radius: 4px;
+  font-family: var(--font-sans);
+  font-size: 0.9375rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-sm);
+  cursor: pointer;
+  transition: all 0.2s;
+  margin-top: var(--spacing-sm);
+}
+
+.submitBtn:hover {
+  background-color: #000;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.cardFooter {
+  margin-top: var(--spacing-2xl);
+  text-align: center;
+  padding-top: var(--spacing-xl);
+  border-top: 1px solid #f1f5f9;
+}
+
+.cardFooter p {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  color: #94a3b8;
+  line-height: 1.5;
+  margin-bottom: var(--spacing-sm);
+}
+
+.supportLink {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #1e293b;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.bottomLegal {
+  position: absolute;
+  bottom: var(--spacing-xl);
+  display: flex;
+  gap: var(--spacing-xl);
+  color: rgba(255, 255, 255, 0.4);
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+}
+
+.bottomLegal span {
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.bottomLegal span:hover {
+  color: rgba(255, 255, 255, 0.8);
+}

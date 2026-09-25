@@ -1,0 +1,44 @@
+.floatingBar {
+  position: fixed;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  flex-direction: column;
+  gap: 12px;
+  z-index: 40;
+  display: none;
+}
+
+@media (min-width: 1280px) {
+  .floatingBar {
+    display: flex;
+  }
+}
+
+.shareIcon {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: white;
+  border: 1px solid #e2e8f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #64748b;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+.shareIcon:hover {
+  border-color: var(--accent-color);
+  color: var(--accent-color);
+  transform: translateX(5px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.activeBookmark {
+  background-color: #10b981;
+  color: white !important;
+  border-color: #10b981;
+}
